@@ -154,4 +154,67 @@ nmap <leader>h :call my_functions#SayHello()<CR>
 
 通过这种方式，你可以更好地组织你的Vim脚本，使其更易于维护和扩展。
 
+## 第五步：使用自动命令 (Autocommand)
+
+自动命令（Autocommand）是Vim中一个非常强大的功能，它允许你在特定事件发生时自动执行一系列命令。例如，当打开一个文件、保存一个文件或进入特定模式时。
+
+### `autocmd` 的概念和用途
+
+`autocmd` 的基本语法是：
+
+```vim
+autocmd [事件] [文件模式] [命令]
+```
+
+- `事件`: 触发自动命令的事件，例如 `BufReadPost` (文件读取后)、`BufWritePre` (文件写入前) 等。
+- `文件模式`: 匹配文件名的模式，例如 `*.py` (所有Python文件)、`*.md` (所有Markdown文件) 等。
+- `命令`: 当事件和文件模式匹配时要执行的Vim命令。
+
+### 实践：为Python文件设置自动缩进
+
+让我们添加一个自动命令，当打开 `.py` 文件时，自动设置缩进为4个空格：
+
+在你的 `.vimrc` 文件中添加以下代码：
+
+```vim
+" ~/.vimrc
+
+" ... (之前的配置)
+
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
+```
+
+- `FileType python`: 这是一个特殊的事件，当Vim识别出文件类型为 `python` 时触发。
+- `setlocal tabstop=4 shiftwidth=4 expandtab`: 这是要执行的命令。`setlocal` 表示只对当前缓冲区生效，`tabstop` 设置Tab键的宽度，`shiftwidth` 设置自动缩进的宽度，`expandtab` 将Tab键转换为空格。
+
+保存 `.vimrc` 文件并重新加载Vim。现在，当你打开一个 `.py` 文件时，Vim会自动应用这些缩进设置。
+
+自动命令极大地扩展了Vim的自动化能力，你可以根据自己的需求，在各种事件上触发自定义的行为。
+
+## 注意事项
+
+### 如何重新加载Vim配置？
+
+每次修改 `.vimrc` 或其他Vim脚本文件后，你需要让Vim重新加载这些配置才能生效。有几种方法可以做到这一点：
+
+1.  **重启Vim**: 最简单直接的方法是关闭当前Vim会话，然后重新打开Vim。这会强制Vim重新读取所有配置文件。
+
+2.  **使用 `:source` 命令**: 在Vim内部，你可以使用 `:source` 命令来重新加载特定的配置文件。例如，要重新加载你的 `.vimrc` 文件，可以输入：
+
+    ```vim
+    :source ~/.vimrc
+    ```
+
+    如果你修改了 `plugin` 或 `autoload` 目录下的脚本，通常重启Vim是更稳妥的选择，以确保所有脚本都被正确加载。
+
+### 调试Vim脚本
+
+在编写Vim脚本时，你可能会遇到错误。以下是一些常用的调试技巧：
+
+-   **`echo` 命令**: 使用 `echo` 命令在Vim的命令行区域输出变量的值或调试信息。
+-   **`echomsg` 命令**: 类似于 `echo`，但会将消息添加到Vim的消息历史中，你可以通过 `:messages` 查看。
+-   **`:debug` 命令**: 这是一个强大的调试工具，可以让你单步执行脚本。例如，`:debug source ~/.vimrc` 会让你逐步执行 `.vimrc` 文件。
+
+希望这些注意事项能帮助你更好地定制和管理你的Vim环境！
+
 ```
