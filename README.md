@@ -1,3 +1,5 @@
+This tutorial is also available in [English](README_EN.md).
+
 # Vim脚本定制入门教程
 
 欢迎来到Vim脚本定制的世界！本教程将引导你从零开始，学习如何通过编写自己的脚本来打造一个强大且个性化的Vim环境。
@@ -6,7 +8,7 @@
 
 - [第一步：创建你的Vim配置文件](#第一步创建你的vim配置文件)
 - [第二步：基础定制 - 快捷键映射](#第二步基础定制---快捷键映射)
-- [第三步：编写你的第一个Vim脚本函数](#第三步编写你的第一个vim脚本函数)
+- [第三步：编写你的第一个Vim脚本函数](#第三步编写你的vim脚本函数)
 - [第四步：脚本的组织与管理](#第四步脚本的组织与管理)
 - [第五步：使用自动命令 (Autocommand)](#第五步使用自动命令-autocommand)
 - [注意事项](#注意事项)
@@ -233,5 +235,3 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
 ## 进阶学习
 
 如果您已经掌握了本教程中的基础知识，并希望进一步探索Vim的强大功能，请查阅我们的[Vim高级定制教程](ADVANCED_VIM_TUTORIAL.md)。
-
-```
