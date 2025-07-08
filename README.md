@@ -186,6 +186,8 @@ autocmd [事件] [文件模式] [命令]
 ```vim
 " ~/.vimrc
 
+filetype plugin indent on
+
 " ... (之前的配置)
 
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
