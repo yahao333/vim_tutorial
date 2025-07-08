@@ -58,7 +58,9 @@ Vim有多种工作模式，最常用的是普通模式（Normal Mode）、插入
 
 让我们将 `<leader>w` 映射为保存文件的命令。`leader` 键是一个特殊的前缀键，默认是 `\`，但很多用户喜欢将其设置为更方便的按键，比如逗号 `,`。
 
-首先，在你的 `.vimrc` 文件中添加以下代码来设置 `leader` 键：
+**重要提示：** 为了确保 `<leader>` 键在Vim启动时就能正确识别，请务必将 `let mapleader = ','` 这行代码添加到你的 `.vimrc` 文件的最顶部，或者至少在任何使用 `<leader>` 的映射之前。
+
+在你的 `.vimrc` 文件中添加以下代码来设置 `leader` 键：
 
 ```vim
 let mapleader = ','
@@ -69,6 +71,7 @@ let mapleader = ','
 ```vim
 nmap <leader>w :w<CR>
 ```
+
 
 这里的 `<CR>` 代表回车键。现在，保存你的 `.vimrc` 文件并重新打开Vim。在普通模式下，按下 `,w`，你就会发现文件被保存了！
 
@@ -124,13 +127,10 @@ mkdir -p ~/.vim/plugin
 mkdir -p ~/.vim/autoload
 ```
 
-然后，创建一个 `~/.vim/plugin/my_settings.vim` 文件，并添加一些全局设置：
+然后，创建一个 `~/.vim/plugin/my_settings.vim` 文件，并添加一些全局设置（**注意：`mapleader` 的设置应保留在 `.vimrc` 中**）：
 
 ```vim
 " ~/.vim/plugin/my_settings.vim
-
-" 设置 leader 键
-let mapleader = ','
 
 " 映射保存快捷键
 nmap <leader>w :w<CR>
