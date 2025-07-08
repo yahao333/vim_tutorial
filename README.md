@@ -10,6 +10,7 @@
 - [第四步：脚本的组织与管理](#第四步脚本的组织与管理)
 - [第五步：使用自动命令 (Autocommand)](#第五步使用自动命令-autocommand)
 - [注意事项](#注意事项)
+- [Vim高级定制教程](ADVANCED_VIM_TUTORIAL.md)
 
 ## 第一步：创建你的Vim配置文件
 
@@ -225,5 +226,11 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
 -   **`:debug` 命令**: 这是一个强大的调试工具，可以让你单步执行脚本。例如，`:debug source ~/.vimrc` 会让你逐步执行 `.vimrc` 文件。
 
 希望这些注意事项能帮助你更好地定制和管理你的Vim环境！
+
+---
+
+## 进阶学习
+
+如果您已经掌握了本教程中的基础知识，并希望进一步探索Vim的强大功能，请查阅我们的[Vim高级定制教程](ADVANCED_VIM_TUTORIAL.md)。
 
 ```
