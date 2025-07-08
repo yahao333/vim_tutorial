@@ -58,8 +58,6 @@ Vim有多种工作模式，最常用的是普通模式（Normal Mode）、插入
 
 让我们将 `<leader>w` 映射为保存文件的命令。`leader` 键是一个特殊的前缀键，默认是 `\`，但很多用户喜欢将其设置为更方便的按键，比如逗号 `,`。
 
-**重要提示：** 为了确保 `<leader>` 键在Vim启动时就能正确识别，请务必将 `let mapleader = ','` 这行代码添加到你的 `.vimrc` 文件的最顶部，或者至少在任何使用 `<leader>` 的映射之前。
-
 在你的 `.vimrc` 文件中添加以下代码来设置 `leader` 键：
 
 ```vim
@@ -127,7 +125,7 @@ mkdir -p ~/.vim/plugin
 mkdir -p ~/.vim/autoload
 ```
 
-然后，创建一个 `~/.vim/plugin/my_settings.vim` 文件，并添加一些全局设置（**注意：`mapleader` 的设置应保留在 `.vimrc` 中**）：
+然后，创建一个 `~/.vim/plugin/my_settings.vim` 文件，并添加一些全局设置：
 
 ```vim
 " ~/.vim/plugin/my_settings.vim
@@ -146,14 +144,14 @@ def my_functions#SayHello()
 enddef
 ```
 
-最后，修改你的 `.vimrc` 文件，移除 `SayHello()` 函数的定义，并更新快捷键映射以调用 `autoload` 中的函数：
+最后，修改你的 `.vimrc` 文件，确保 `let mapleader = ','` 存在，并移除 `SayHello()` 函数的定义，然后更新快捷键映射以调用 `autoload` 中的函数：
 
 ```vim
 " ~/.vimrc
 
 set number
+let mapleader = ',' " 确保 leader 键在这里设置
 
-" 移除之前的 leader 键设置和保存映射，它们现在在 plugin 目录中
 " 移除 SayHello() 函数定义
 
 nmap <leader>h :call my_functions#SayHello()<CR>
