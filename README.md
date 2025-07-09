@@ -14,6 +14,7 @@ This tutorial is also available in [English](README_EN.md).
 - [注意事项](#注意事项)
 - [Vim高级定制教程](ADVANCED_VIM_TUTORIAL.md)
 - [通用、简洁的Vim配置（vimrc）傻瓜教程](MINIMAL_VIMRC_TUTORIAL.md)
+- [Vim脚本实战教程](Vim脚本实战教程.md)
 
 ## 第一步：创建你的Vim配置文件
 
